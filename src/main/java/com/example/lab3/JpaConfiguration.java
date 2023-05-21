@@ -1,0 +1,10 @@
+package com.example.lab3;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@Configuration
+@EnableJpaRepositories(basePackages = "com.example.lab3.repositories")
+public class JpaConfiguration {
+    // Configuration code...
+}

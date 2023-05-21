@@ -23,6 +23,9 @@ public class Bid {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(nullable = false)
+    private String bidderName;
+
     public Bid() {
     }
 
@@ -30,6 +33,7 @@ public class Bid {
         this.amount = amount;
         this.lot = lot;
         this.user = user;
+        this.bidderName = user.getName();
     }
 
     public Long getId() {
@@ -62,5 +66,9 @@ public class Bid {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getBidderName() {
+        return bidderName;
     }
 }
