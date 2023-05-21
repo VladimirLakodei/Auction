@@ -44,6 +44,10 @@ public class AuctionLot {
         return name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public AuctionLot(Long id, String name, String description, BigDecimal startingPrice, BigDecimal buyNowPrice, LocalDateTime endDate) {
         this.id = id;
         this.name = name;
@@ -55,6 +59,10 @@ public class AuctionLot {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public BigDecimal getStartingPrice() {
