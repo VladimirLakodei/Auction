@@ -10,6 +10,9 @@ import java.util.List;
 @Table(name = "auction_lots")
 @Entity
 public class AuctionLot {
+    public AuctionLot() {
+        // Default constructor
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

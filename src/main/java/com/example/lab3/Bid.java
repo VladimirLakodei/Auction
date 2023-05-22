@@ -7,6 +7,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "bids")
 public class Bid {
+    public Bid() {
+        // Default constructor
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,10 +30,8 @@ public class Bid {
     @Column(nullable = false)
     private String bidderName;
 
-    public Bid() {
-    }
-
-    public Bid(BigDecimal amount, AuctionLot lot, User user) {
+    public Bid(Long id, BigDecimal amount, AuctionLot lot, User user) {
+        this.id = id;
         this.amount = amount;
         this.lot = lot;
         this.user = user;
