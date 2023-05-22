@@ -44,6 +44,16 @@ public class AuctionController {
         return allLots;
     }
 
+    @Autowired
+    AuctionLotRepository auctionLotRepository;
+
+    @PostMapping("/lots")
+    @ResponseStatus(HttpStatus.CREATED)
+    public AuctionLot createLot(@Valid @RequestBody AuctionLot lot) {
+        return auctionLotRepository.save(lot);
+    }
+
+/*
     @PostMapping("/lots")
     public AuctionLot createLot(@Valid @RequestBody AuctionLot lot) {
         // Implementation to create a new lot and save it to the database
@@ -52,6 +62,8 @@ public class AuctionController {
         AuctionLotData.addLot(lot);
         return lot;
     }
+*/
+
 
     @PostMapping("/lots/{lotId}/bids")
     public Bid placeBid(@PathVariable Long lotId, @Valid @RequestBody Bid bid) {

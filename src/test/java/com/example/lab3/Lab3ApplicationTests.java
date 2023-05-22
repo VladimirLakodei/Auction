@@ -22,7 +22,6 @@ class Lab3ApplicationTests {
 
     @Test
     void testCreateAuction() {
-        // Test logic here
         AuctionLot lot = new AuctionLot(1L, "Lot 1", "Description for Lot 1", BigDecimal.valueOf(100), null, LocalDateTime.now().plusDays(7));
         lot.setName("Test Auction Lot");
         lot.setDescription("Test description");
@@ -30,11 +29,6 @@ class Lab3ApplicationTests {
 
         AuctionLot createdLot = auctionController.createLot(lot);
 
-        // Assert or verify the expected behavior
-        // For example, you can check if the created lot matches the input values or if it has been added to the list of lots
-        // You can use assertions provided by testing frameworks like JUnit or libraries like AssertJ or Hamcrest
-
-        // Example using JUnit assertion:
         assertNotNull(createdLot.getId());
         assertEquals("Test Auction Lot", createdLot.getName());
         assertEquals("Test description", createdLot.getDescription());
